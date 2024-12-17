@@ -1,32 +1,75 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Hello Django on Render!</title>
+    <title>Home</title>
 
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
           crossorigin="anonymous">
 </head>
+
 <body>
-<main class="container">
-    <div class="row text-center justify-content-center">
-        <div class="col">
-            <h1 class="display-4">Hello World!</h1>
+    <main class="container">
+
+        <div class="row text-center justify-content-center">
+            <div class="col">
+                <h1 class="display-4">Home</h1>
+                <p>Name: {{ name }}</p>
+                <p>Age: {{ age }}</p>
+            </div>
         </div>
-    </div>
-</main>
 
-<p>Name: {{ name }}</p>
-<p>Age: {{ age }}</p>
+        <div class="row text-center justify-content-center">
+            <div class="col-sm-4">
+                <h3>Provide Information</h3>
+                <form action="{% url 'index' %}" method="GET">
+                    <!-- Input for Name -->
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <br><br>
+            
+                    <!-- Input for Age -->
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" required>
+                    <br><br>
+            
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-2">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-2">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-2">
+                <h3>Column 4</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-2">
+                <h3>Column 5</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
 
-<form action="{% url 'about' %}" method="get">
-    <button type="submit">Go to About Page</button>
-</form>
+        <div class="row text-center justify-content-center">
+            <div class="col">
+                <form action="{% url 'about' %}" method="get">
+                    <button type="submit">Go to About Page</button>
+                </form>
+            </div>
+        </div>
 
+    </main>
 </body>
+
 </html>
